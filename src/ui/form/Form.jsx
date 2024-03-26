@@ -1,4 +1,4 @@
-import "./form.scss";
+import style from "./form.module.scss";
 import Button from "../button/Button.jsx";
 import { useState } from "react";
 
@@ -40,24 +40,24 @@ const Form = ({ onSubmit }) => {
   };
 
   return (
-    <form className="form" onSubmit={addNote}>
+    <form className={style.form} onSubmit={addNote}>
       <input
         type="text"
         name="title"
-        className={`imput ${formValidState.title ? "" : "invalid"}`}
+        className={`${style.input} ${formValidState.title ? "" : style.invalid}`}
       />
       <input type="text" name="tag" />
       <input
         type="date"
         name="date"
-        className={`imput ${formValidState.date ? "" : "invalid"}`}
+        className={`${style.input} ${formValidState.date ? "" : style.invalid}`}
       />
       <textarea
         name="text"
         id=""
         cols="30"
         rows="10"
-        className={`imput ${formValidState.text ? "" : "invalid"}`}
+        className={`${style.input} ${formValidState.text ? "" : style.invalid}`}
       ></textarea>
       <Button text="Сохранить" />
     </form>

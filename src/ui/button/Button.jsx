@@ -1,9 +1,9 @@
-import "./button.scss";
+import style from "./button.module.scss";
 
 const Button = ({ text }) => {
   return (
     <>
-      <button className="button">{text}</button>
+      <button className={style.button}>{text}</button>
     </>
   );
 };
