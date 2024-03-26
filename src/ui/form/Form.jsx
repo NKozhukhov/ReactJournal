@@ -6,7 +6,7 @@ const Form = ({ onSubmit }) => {
   const [formValidState, setFormValidState] = useState({
     title: true,
     date: true,
-    post: true,
+    text: true,
   });
 
   const addNote = (e) => {
@@ -14,26 +14,24 @@ const Form = ({ onSubmit }) => {
     const formData = new FormData(e.target);
     const formProps = Object.fromEntries(formData);
     let isFormValid = true;
+
     if (!formProps.title?.trim().length) {
       setFormValidState((state) => ({ ...state, title: false }));
       isFormValid = false;
     } else {
       setFormValidState((state) => ({ ...state, title: true }));
-      isFormValid = true;
     }
-    if (!formProps.post?.trim().length) {
-      setFormValidState((state) => ({ ...state, post: false }));
+    if (!formProps.text?.trim().length) {
+      setFormValidState((state) => ({ ...state, text: false }));
       isFormValid = false;
     } else {
-      setFormValidState((state) => ({ ...state, post: true }));
-      isFormValid = true;
+      setFormValidState((state) => ({ ...state, text: true }));
     }
     if (!formProps.date) {
       setFormValidState((state) => ({ ...state, date: false }));
       isFormValid = false;
     } else {
       setFormValidState((state) => ({ ...state, date: true }));
-      isFormValid = true;
     }
     if (!isFormValid) {
       return;
@@ -46,20 +44,20 @@ const Form = ({ onSubmit }) => {
       <input
         type="text"
         name="title"
-        style={{ border: formValidState.title ? undefined : "1px solid red" }}
+        className={`imput ${formValidState.title ? "" : "invalid"}`}
       />
       <input type="text" name="tag" />
       <input
         type="date"
         name="date"
-        style={{ border: formValidState.title ? undefined : "1px solid red" }}
+        className={`imput ${formValidState.date ? "" : "invalid"}`}
       />
       <textarea
         name="text"
         id=""
         cols="30"
         rows="10"
-        style={{ border: formValidState.title ? undefined : "1px solid red" }}
+        className={`imput ${formValidState.text ? "" : "invalid"}`}
       ></textarea>
       <Button text="Сохранить" />
     </form>
