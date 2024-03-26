@@ -19,18 +19,21 @@ const Form = ({ onSubmit }) => {
       isFormValid = false;
     } else {
       setFormValidState((state) => ({ ...state, title: true }));
+      isFormValid = true;
     }
     if (!formProps.post?.trim().length) {
       setFormValidState((state) => ({ ...state, post: false }));
       isFormValid = false;
     } else {
       setFormValidState((state) => ({ ...state, post: true }));
+      isFormValid = true;
     }
     if (!formProps.date) {
       setFormValidState((state) => ({ ...state, date: false }));
       isFormValid = false;
     } else {
       setFormValidState((state) => ({ ...state, date: true }));
+      isFormValid = true;
     }
     if (!isFormValid) {
       return;
