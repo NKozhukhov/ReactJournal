@@ -1,0 +1,11 @@
+@import "../../assets/styles/colors.scss";
+
+.sidebar {
+  width: 30%;
+  background-color: $black-color;
+  padding: 3rem 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

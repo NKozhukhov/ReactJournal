@@ -1,0 +1,19 @@
+@import "../../assets/styles/colors.scss";
+
+.card-button {
+  border-radius: 0.5rem;
+  background-color: $black-color--light;
+  color: #fff;
+  padding: 2rem;
+  border: none;
+  cursor: pointer;
+  display: block;
+  font-size: 1.6rem;
+  &:hover {
+    background-color: $black-color--light-hover;
+  }
+}
+.not-find-item {
+  text-align: center;
+  padding: 3rem 2rem;
+}

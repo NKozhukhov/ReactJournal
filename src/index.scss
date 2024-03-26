@@ -1,0 +1,27 @@
+@import "./app.scss";
+@import "../src/assets/styles/colors.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Kreadon", "Arial", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  height: 100%;
+  background-color: $bezh-color;
+}
+
+ul {
+  list-style-type: none;
+}
